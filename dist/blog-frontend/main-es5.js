@@ -872,7 +872,7 @@
                         };
                         this.service.create(eventData).subscribe(function (data) {
                             if (data.status == 200) {
-                                _this.toastr.success('Event created successfully');
+                                _this.toastr.success('Blog created successfully');
                                 _this.appRouter.navigate(["/allblog"]);
                             }
                         });
@@ -994,7 +994,7 @@
                     }
                     this.service.edit(this.blogId, this.blog).subscribe(function (data) {
                         if (data.status == 200) {
-                            _this.toastr.success('Event created successfully');
+                            _this.toastr.success('Blog edited successfully');
                             _this.appRouter.navigate(["/allblog"]);
                         }
                     });

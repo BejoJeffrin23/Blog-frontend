@@ -94,7 +94,7 @@ export class CreateBlogComponent implements OnInit {
 
       this.service.create(eventData).subscribe((data) => {
         if (data.status == 200) {
-          this.toastr.success('Event created successfully')
+          this.toastr.success('Blog created successfully')
           this.appRouter.navigate([`/allblog`])
         }
       });

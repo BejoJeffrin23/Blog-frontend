@@ -880,7 +880,7 @@ let CreateBlogComponent = class CreateBlogComponent {
             };
             this.service.create(eventData).subscribe((data) => {
                 if (data.status == 200) {
-                    this.toastr.success('Event created successfully');
+                    this.toastr.success('Blog created successfully');
                     this.appRouter.navigate([`/allblog`]);
                 }
             });
@@ -1010,7 +1010,7 @@ let EditBlogComponent = class EditBlogComponent {
         }
         this.service.edit(this.blogId, this.blog).subscribe((data) => {
             if (data.status == 200) {
-                this.toastr.success('Event created successfully');
+                this.toastr.success('Blog edited successfully');
                 this.appRouter.navigate([`/allblog`]);
             }
         });

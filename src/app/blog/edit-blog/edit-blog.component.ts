@@ -73,7 +73,7 @@ export class EditBlogComponent implements OnInit {
 
     this.service.edit(this.blogId, this.blog).subscribe((data) => {
       if (data.status == 200) {
-        this.toastr.success('Event created successfully')
+        this.toastr.success('Blog edited successfully')
         this.appRouter.navigate([`/allblog`])
       }
     });
