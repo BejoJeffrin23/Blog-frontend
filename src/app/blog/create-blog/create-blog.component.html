@@ -1,0 +1,78 @@
+<nav class="navbar navbar-expand-md navbar-light " style="background-color:blue">
+
+  <img src="assets/download.png" class="logo">
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+
+    <span class="navbar-toggler-icon"></span>
+
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+    <ul class="navbar-nav mr-auto">
+
+
+
+      <li class="nav-item">
+
+        <a class="nav-link dash" routerLink="/allblog" style="color: white">
+          All-blogs
+        </a>
+
+      </li>
+
+
+    </ul>
+    <button class="btn btn-outline-success my-2 my-sm-0 blue" type="submit" (click)="logout()">LogOut</button>
+
+  </div>
+
+</nav>
+
+<div class="row p-0 m-0 im ">
+
+  <div class="col-sm"></div>
+  <div class="sides">
+
+    <div class="col-sm p-5">
+      <form #eventForm="ngForm" (submit)="create()" enctype="multipart/form-data">
+        <div class="form-group">
+          <label>Title:</label>
+          <input type="text" [(ngModel)]="title" name="title" class="form-control" placeholder="Title of event"
+            required>
+        </div>
+
+        <div class="form-group">
+          <label>Description:</label>
+          <input type="text" [(ngModel)]="description" name="description" class="form-control"
+            placeholder="Description of event" required>
+        </div>
+
+        <div class="form-group ">
+          <label class="tt">Content</label>
+          <app-ngx-editor style="background-color:rgb(182, 228, 255)" [placeholder]="'Enter description here...'"
+            [config]="editorConfig" [spellcheck]="true" [(ngModel)]="content" [ngModelOptions]="{standalone: true}"
+            class="descrip"></app-ngx-editor>
+        </div>
+
+        <div class="form-group box">
+          <label>Image</label>
+          <input type="file" (change)="Selected($event)" required>
+          <div style="background-color:rgb(182, 228, 255);" [hidden]="!imagePreview">
+            <img class="image" src="{{imagePreview}}">
+          </div>
+        </div>
+
+        <button class="btn btn-success" [disabled]="eventForm.invalid" type="submit">Create</button>
+      </form>
+
+    </div>
+
+
+  </div>
+
+  <div class="col-sm"></div>
+</div>
+<br>

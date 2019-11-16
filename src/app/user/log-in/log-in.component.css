@@ -1,0 +1,30 @@
+
+.page{
+    background:black;
+    height: 100vh;
+}
+
+.head{
+    background-color:black;
+    border-radius: 14px;
+}
+
+.sides{
+    border: 2px solid aqua;
+    margin-top: 20px;
+    border-radius: 10px;
+    background-color:blue;
+}
+
+.log{
+    text-align: center;
+    border-radius: 100%;
+    height: 75px;
+    width: 75px;
+}
+
+@media screen and (min-height:1024px)
+{.sides{
+height: 60vh;
+margin-top: 10vh;
+}}

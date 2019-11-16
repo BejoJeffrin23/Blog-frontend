@@ -1,0 +1,17 @@
+.image{
+    height:30vmax;
+    width:30vmax;
+    margin: auto;
+}
+.logo{
+    border-radius: 100%;
+    height: 50px;
+    width: 50px;
+}
+.dash{
+    margin-left: 40px;
+}
+.blue{
+    background-color: #008CBA;
+    color: white
+}

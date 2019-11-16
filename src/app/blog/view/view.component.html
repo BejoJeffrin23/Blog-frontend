@@ -1,0 +1,50 @@
+<div style="height: 100%;background-color:rgb(77, 132, 214);">
+  <nav class="navbar navbar-expand-md navbar-light " style="background-color:blue">
+
+    <img src="assets/download.png" class="logo">
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+
+      <span class="navbar-toggler-icon"></span>
+
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+      <ul class="navbar-nav mr-auto">
+
+
+
+        <li class="nav-item">
+
+          <a class="nav-link dash" routerLink="/allblog" style="color: white">
+            All-blogs
+          </a>
+
+        </li>
+
+
+      </ul>
+      <button class="btn btn-outline-success my-2 my-sm-0 blue" type="submit" (click)="logout()">LogOut</button>
+
+    </div>
+
+  </nav>
+
+  <br>
+  <div class="card mb-3" style="width: 88%;margin:auto;">
+    <div style="margin: auto;">
+      <img src="http://localhost:4001/{{blog.productimage}}" class="card-img-top image" alt="..."></div>
+    <div class="card-body">
+      <h2 class="card-title" style="text-align: center;">{{blog.title}}</h2>
+      <h5 class="card-text">Description : {{blog.description}}</h5>
+      <p class="card-text" [innerHtml]=blog.content></p>
+
+      <p class="card-text" style="color: rgb(89, 129, 202);">Blogger : {{blog.authorName}}</p>
+
+      <p class="card-text"><small class="text-muted">Created on : {{blog.createdOn | date:'medium'}}</small></p>
+    </div>
+  </div>
+  <br>
+</div>

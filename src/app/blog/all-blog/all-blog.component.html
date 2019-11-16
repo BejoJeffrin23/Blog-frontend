@@ -1,0 +1,72 @@
+<nav class="navbar navbar-expand-md navbar-light " style="background-color:blue">
+
+  <img src="assets/download.png" class="logo">
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+
+    <span class="navbar-toggler-icon"></span>
+
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+    <ul class="navbar-nav mr-auto">
+
+    </ul>
+    <button class="btn btn-outline-success my-2 my-sm-0 out" type="submit" (click)="logout()">LogOut</button>
+
+  </div>
+
+</nav>
+<br>
+<div>
+  <marquee behavior="scroll" direction="left" scrollamount="7">
+    <h3>Hello <b class="name">{{userName}}</b>...Welcome to the Blog</h3>
+  </marquee>
+</div>
+
+
+
+<div class="check">
+  <button class="btn btn-primary button" (click)="create()">
+    <h4>Create +</h4>
+  </button>
+</div>
+<br>
+<div *ngFor="let data of details |paginate: { itemsPerPage: count, currentPage: p }">
+  <div class="card mb-3 shadow" style="max-width: 88%;margin: auto;" *ngIf="data">
+    <div class="row no-gutters">
+      <div class="col-md-4 image">
+        <img src="http://localhost:4001/{{data.productimage}}" class="img-fluid set" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h3 class="card-title" style="text-align: center;">{{data.title}}</h3>
+          <h5 class="card-text">Description : {{data.description}}</h5>
+          <p class="card-text back" [innerHtml]=data.content></p>
+
+          <p class="card-text">Blogger : {{data.authorName}}</p>
+
+          <p class="card-text"><small class="text-muted">Created on :{{data.createdOn | date:'medium'}}</small></p>
+          <div>
+            &nbsp;<button class="btn btn-primary button" (click)="read(data.blogId)">
+              <i class="fas fa-glasses"></i>
+            </button>&nbsp;
+            <button class="btn btn-primary button" (click)="edit(data.blogId)">
+              <i class="fas fa-edit"></i>
+            </button>&nbsp;
+            <button class="btn btn-primary button" (click)="delete(data.blogId)">
+              <i class="fas fa-trash-alt"></i>
+            </button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="controller" *ngIf="details">
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>
