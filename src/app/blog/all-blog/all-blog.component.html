@@ -34,6 +34,7 @@
   </button>
 </div>
 <br>
+<div *ngIf="details">
 <div *ngFor="let data of details |paginate: { itemsPerPage: count, currentPage: p }">
   <div class="card mb-3 shadow" style="max-width: 88%;margin: auto;" *ngIf="data">
     <div class="row no-gutters">
@@ -66,7 +67,7 @@
     </div>
   </div>
 </div>
-
+</div>
 <div class="controller" *ngIf="details">
   <pagination-controls (pageChange)="p = $event"></pagination-controls>
 </div>
