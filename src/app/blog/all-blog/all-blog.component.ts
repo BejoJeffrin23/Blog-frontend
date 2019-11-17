@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { BlogService } from '../../blog.service';
 import { ActivatedRoute, Router } from '@angular/router'
 import { Cookie } from 'ng2-cookies/ng2-cookies';
@@ -7,13 +7,15 @@ import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-all-blog',
   templateUrl: './all-blog.component.html',
-  styleUrls: ['./all-blog.component.css']
+  styleUrls: ['./all-blog.component.css'],
+  encapsulation:ViewEncapsulation.Emulated
 })
 export class AllBlogComponent implements OnInit {
   public details: []
   public userName: string;
   public p: Number = 1;
   public count: Number = 5;
+  public content:string;
   constructor(public toastr: ToastrService, private service: BlogService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
@@ -24,7 +26,7 @@ export class AllBlogComponent implements OnInit {
   fetch = () => {
     this.service.getevents().subscribe((data) => {
       this.details = data["data"]
-      console.log(this.details)
+     
     })
   }
 

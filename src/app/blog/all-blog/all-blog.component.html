@@ -38,13 +38,13 @@
   <div class="card mb-3 shadow" style="max-width: 88%;margin: auto;" *ngIf="data">
     <div class="row no-gutters">
       <div class="col-md-4 image">
-        <img src="http://localhost:4001/{{data.productimage}}" class="img-fluid set" alt="...">
+        <img src="http://localhost:4001/{{data.productimage}}" class="card-img set" alt="...">
       </div>
       <div class="col-md-8">
         <div class="card-body">
           <h3 class="card-title" style="text-align: center;">{{data.title}}</h3>
           <h5 class="card-text">Description : {{data.description}}</h5>
-          <p class="card-text back" [innerHtml]=data.content></p>
+          <p class="card-text back" >Content : {{data.content}}</p>
 
           <p class="card-text">Blogger : {{data.authorName}}</p>
 

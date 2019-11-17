@@ -9,12 +9,13 @@ import { RouterModule } from '@angular/router';
 import{NgxEditorModule } from 'ngx-editor';
 import { ViewComponent } from './view/view.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { SafeHtmlPipe } from './pipe/html.pipe';
 
 
 
 
 @NgModule({
-  declarations: [CreateBlogComponent, EditBlogComponent, AllBlogComponent, ViewComponent],
+  declarations: [CreateBlogComponent, EditBlogComponent, AllBlogComponent, ViewComponent,SafeHtmlPipe],
   imports: [
     CommonModule,
     NgxEditorModule,
