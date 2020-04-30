@@ -21,7 +21,7 @@
     "@angular/router": "~8.2.5",
     "@fortawesome/fontawesome-free": "^5.11.2",
     "bootstrap": "^4.3.1",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "ng2-cookies": "^1.0.12",
     "ngx-bootstrap": "^5.2.0",
     "ngx-editor": "^4.1.0",
